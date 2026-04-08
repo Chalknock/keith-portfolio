@@ -8,7 +8,7 @@ import {
   X,
   ExternalLink,
 } from "lucide-react";
-
+import { createPortal } from "react-dom";
 /* ── DATA ─────────────────────────────────────────────────── */
 const civicProjects = [
   {
@@ -49,7 +49,23 @@ const civicProjects = [
     ],
     github: "https://github.com/Chalknock",
     folder: "bantay-proyekto",
-    images: [] as string[],
+    images: [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png",
+      "9.png",
+      "10.png",
+      "11.png",
+      "12.png",
+      "13.png",
+      "14.png",
+      "15.png",
+    ],
     isCivic: true,
   },
 ];
@@ -254,7 +270,7 @@ function Carousel({
         </div>
       </div>
 
-      {lb && (
+      {/* {lb && (
         <Lightbox
           folder={folder}
           images={images}
@@ -263,7 +279,19 @@ function Carousel({
           onPrev={prev}
           onNext={next}
         />
-      )}
+      )} */}
+      {lb &&
+        createPortal(
+          <Lightbox
+            folder={folder}
+            images={images}
+            index={cur}
+            onClose={() => setLb(false)}
+            onPrev={prev}
+            onNext={next}
+          />,
+          document.body,
+        )}
     </>
   );
 }
