@@ -99,7 +99,7 @@ const otherProjects = [
     tags: ["React.js", "Django", "REST API", "Python", "MySQL"],
     github: "https://github.com/Chalknock",
     folder: "expense-tracker",
-    images: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.jpg"],
+    images: [] as string[],
   },
   {
     number: "06",
