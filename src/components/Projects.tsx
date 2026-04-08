@@ -28,7 +28,7 @@ const civicProjects = [
     ],
     github: "https://github.com/Chalknock",
     folder: "bantay-gusali",
-    images: [] as string[],
+    images: ["1.png", "2.png", "3.png", "4.png", "5.png"],
     isCivic: true,
   },
   {
@@ -81,18 +81,18 @@ const otherProjects = [
     folder: "renewable-energy-system",
     images: ["1.png", "2.png", "3.png", "4.png", "5.png"],
   },
+  // {
+  //   number: "04",
+  //   title: "Post-Earthquake Building Inspection App",
+  //   description:
+  //     "A Flutter mobile app for post-disaster field inspections enabling rapid data collection, real-time reporting, and offline support for building safety inspectors.",
+  //   tags: ["Flutter", "Dart", "SQLite", "Offline-first", "PDF Export", "GPS"],
+  //   github: "https://github.com/Chalknock",
+  //   folder: "post-earthquake-inspection",
+  //   images: [] as string[],
+  // },
   {
     number: "04",
-    title: "Post-Earthquake Building Inspection App",
-    description:
-      "A Flutter mobile app for post-disaster field inspections enabling rapid data collection, real-time reporting, and offline support for building safety inspectors.",
-    tags: ["Flutter", "Dart", "SQLite", "Offline-first", "PDF Export", "GPS"],
-    github: "https://github.com/Chalknock",
-    folder: "post-earthquake-inspection",
-    images: [] as string[],
-  },
-  {
-    number: "05",
     title: "Expense Tracker Application",
     description:
       "Full-stack expense tracking with CRUD, category management, and a clean RESTful API built with Django REST Framework and React.js.",
@@ -102,7 +102,7 @@ const otherProjects = [
     images: [] as string[],
   },
   {
-    number: "06",
+    number: "05",
     title: "Automated Aquatic Life Support System",
     description:
       "An IoT system using Raspberry Pi and ESP32 with water quality sensors for real-time automated monitoring and environmental control.",
