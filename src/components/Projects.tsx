@@ -14,9 +14,9 @@ const civicProjects = [
   {
     number: "01",
     title: "Bantay Gusali",
-    subtitle: "Building Safety Inspection App",
+    subtitle: "Building Safety Inspection Platform · v2",
     description:
-      "A Flutter/Android mobile app for Philippine OBO/BPLO building inspectors. Features role-based access (Inspector/Supervisor/Administrator), 11 inspection types, 7 PD 1096-compliant color-coded status tags, offline-first SQLite with defensive schema migrations, GPS-tagged photo documentation, PDF export, and push notifications.",
+      "What started as a post-earthquake rapid inspection tool evolved into a full building safety platform for Philippine OBO/BPLO offices. Bantay Gusali overhauled the entire architecture — adding role-based access for Inspectors, Supervisors, and Administrators, 11 inspection types with PD 1096-compliant color-coded status tags, GPS-tagged photo documentation, offline-first SQLite with defensive schema migrations, Firebase push notifications, and official PDF report generation.",
     tags: [
       "Flutter",
       "Dart",
@@ -25,9 +25,11 @@ const civicProjects = [
       "PDF Export",
       "GPS",
       "Firebase",
+      "PD 1096",
     ],
-    github: "https://github.com/Chalknock",
+    github: "https://github.com/Chalknock/bantay_gusali",
     folder: "bantay-gusali",
+    url: [] as string[],
     images: ["1.png", "2.png", "3.png", "4.png", "5.png"],
     isCivic: true,
   },
@@ -36,7 +38,7 @@ const civicProjects = [
     title: "Bantay Proyekto",
     subtitle: "Infrastructure Transparency App",
     description:
-      "An anti-corruption Flutter/Android app for DPWH/LGU field engineers and COA auditors. Phase 1 complete with a 9-table SQLite schema, 29-item checklist across 6 categories, role-based access for Admin/Inspector/Citizen users, and an automated red flag system triggering on ≥15% contractor vs. inspector progress discrepancy. Grounded in RA 9184, PD 1594, and COA circulars.",
+      "Infrastructure corruption costs the Philippines billions every year. Bantay Proyekto gives DPWH field engineers and COA auditors a tool to fight back — a 29-item checklist across 6 inspection categories, an automated red flag system that triggers when contractor-reported progress deviates ≥15% from inspector findings, and citizen reporting built in. Grounded in RA 9184, PD 1594, and COA circulars.",
     tags: [
       "Flutter",
       "Dart",
@@ -47,8 +49,9 @@ const civicProjects = [
       "COA",
       "RA 9184",
     ],
-    github: "https://github.com/Chalknock",
+    github: "https://github.com/Chalknock/bantay_proyekto",
     folder: "bantay-proyekto",
+    url: [] as string[],
     images: [
       "1.png",
       "2.png",
@@ -75,40 +78,44 @@ const otherProjects = [
     number: "03",
     title: "Renewable Energy Inventory System",
     description:
-      "A full-stack GIS web application featuring interactive Leaflet maps for visualization and resource tracking of renewable energy assets across geographic regions.",
+      "A GIS-powered inventory platform built during my time as a Science Research Analyst at MMSU. Planners and researchers can visualize, filter, and track renewable energy assets across geographic regions through an interactive Leaflet map — replacing spreadsheet chaos with a spatial, queryable database. Built with React, Node.js/Express, and MySQL.",
     tags: ["React.js", "Node.js", "Express", "Leaflet", "GIS", "MySQL"],
     github: "https://github.com/Chalknock",
     folder: "renewable-energy-system",
+    url: "https://arec.mmsu.edu.ph/",
     images: ["1.png", "2.png", "3.png", "4.png", "5.png"],
   },
-  // {
-  //   number: "04",
-  //   title: "Post-Earthquake Building Inspection App",
-  //   description:
-  //     "A Flutter mobile app for post-disaster field inspections enabling rapid data collection, real-time reporting, and offline support for building safety inspectors.",
-  //   tags: ["Flutter", "Dart", "SQLite", "Offline-first", "PDF Export", "GPS"],
-  //   github: "https://github.com/Chalknock",
-  //   folder: "post-earthquake-inspection",
-  //   images: [] as string[],
-  // },
   {
     number: "04",
-    title: "Expense Tracker Application",
+    title: "Post-Earthquake Building Inspection App",
     description:
-      "Full-stack expense tracking with CRUD, category management, and a clean RESTful API built with Django REST Framework and React.js.",
-    tags: ["React.js", "Django", "REST API", "Python", "MySQL"],
+      "The predecessor to Bantay Gusali. Originally built for rapid post-disaster structural triage — this was the proof-of-concept that validated the offline-first, GPS-tagged inspection model. Lessons from real-world use drove a full rebuild into what became Bantay Gusali, a production-grade platform now targeting PD 1096 compliance and multi-role government workflows.",
+    tags: ["Flutter", "Dart", "SQLite", "Offline-first", "PDF Export", "GPS"],
     github: "https://github.com/Chalknock",
-    folder: "expense-tracker",
+    folder: "post-earthquake-inspection",
+    url: [] as string[],
     images: [] as string[],
   },
   {
     number: "05",
+    title: "Expense Tracker Application",
+    description:
+      "A full-stack personal finance app demonstrating clean REST API design with Django REST Framework and a responsive React.js frontend. Supports full CRUD, category management, and expense summaries — built as a showcase of my Django + React workflow with a well-structured MySQL schema.",
+    tags: ["React.js", "Django", "REST API", "Python", "MySQL"],
+    github: "https://github.com/Chalknock",
+    folder: "expense-tracker",
+    url: [] as string[],
+    images: [] as string[],
+  },
+  {
+    number: "06",
     title: "Automated Aquatic Life Support System",
     description:
-      "An IoT system using Raspberry Pi and ESP32 with water quality sensors for real-time automated monitoring and environmental control.",
+      "An end-to-end IoT system that keeps aquatic environments alive — autonomously. Raspberry Pi and ESP32 microcontrollers monitor water quality sensors in real time, with automated control logic responding to temperature, pH, and oxygen readings. Data flows over MQTT for live monitoring, making it hands-free and failure-aware.",
     tags: ["Raspberry Pi", "ESP32", "IoT", "Python", "MQTT"],
     github: "https://github.com/Chalknock",
     folder: "aquatic-life-support",
+    url: [] as string[],
     images: [] as string[],
   },
 ];
@@ -304,6 +311,7 @@ function ProjectCard({
   p: (typeof otherProjects)[0] & { isCivic?: boolean; subtitle?: string };
   civic?: boolean;
 }) {
+  const url = Array.isArray(p.url) ? p.url[0] : p.url;
   return (
     <div className={`project-card${civic ? " project-card-civic" : ""}`}>
       <Carousel folder={p.folder} images={p.images} title={p.title} />
@@ -338,6 +346,21 @@ function ProjectCard({
           )}
         </div>
         <p className="project-desc">{p.description}</p>
+
+        {url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow-sm hover:bg-blue-700 hover:shadow-md transition-all duration-200"
+          >
+            Live Demo
+            <ExternalLink
+              size={16}
+              className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+            />
+          </a>
+        )}
         <div className="tags" style={{ marginTop: 4 }}>
           {p.tags.map((t) => (
             <span key={t} className={civic ? "tag-civic" : "tag"}>
