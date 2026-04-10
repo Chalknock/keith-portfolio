@@ -32,7 +32,7 @@ export default function Contact() {
     <section id="contact" className="section dot-grid">
       <div className="container">
         <div className="section-header">
-          <span className="section-number">04.</span>
+          <span className="section-number">05.</span>
           <h2 className="section-title">Contact</h2>
           <div className="section-line" />
         </div>
