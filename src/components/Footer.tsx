@@ -7,7 +7,7 @@ export default function Footer() {
       </a>
       {" · "}
       <a
-        href="https://chalknock.github.io/portfolio"
+        href="https://keith-portfolio-red.vercel.app"
         target="_blank"
         rel="noreferrer"
       >

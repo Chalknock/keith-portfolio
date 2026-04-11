@@ -39,7 +39,7 @@ export default function About() {
             <div className="stats-grid">
               {[
                 { value: "2+", label: "Years Experience" },
-                { value: "5+", label: "Projects Shipped" },
+                { value: "6+", label: "Projects Shipped" },
                 { value: "10+", label: "Technologies" },
                 { value: "2", label: "Civic Tech Apps" },
               ].map((s) => (

@@ -337,7 +337,7 @@ function ProjectCard({
       <div className="project-body">
         <div className="project-header">
           <span className="project-num-label">{p.number}</span>
-          <div style={{ display: "flex", gap: 6 }}>
+          {/* <div style={{ display: "flex", gap: 6 }}>
             <a
               href={p.github}
               target="_blank"
@@ -347,7 +347,7 @@ function ProjectCard({
             >
               <Computer size={13} />
             </a>
-          </div>
+          </div> */}
         </div>
         <div>
           <div className="project-title">{p.title}</div>
