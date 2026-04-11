@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -43,6 +43,13 @@ export default function Hero() {
               </a>
               <a href="#contact" className="btn-outline">
                 Get In Touch
+              </a>
+              <a
+                href="/resume/KeithAngeloTumaneng_Resume.pdf"
+                download
+                className="btn-outline"
+              >
+                Download CV <Download size={14} />
               </a>
             </div>
 
